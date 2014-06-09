@@ -12,7 +12,8 @@ XSub <- subset(X, X$Date == "1/2/2007" | X$Date == "2/2/2007")
 XSub$DateTime <- strptime(do.call(paste, c(XSub[c("Date","Time")], sep = " ")),format="%d/%m/%Y %H:%M:%S")
 
 # open device
-pdf(file="plot2.pdf")
+# pdf(file="plot2.pdf")
+png(filename = 'plot2.png', height = 480, width = 480, units = 'px')
 
 # initialise plot
 with(XSub, plot(DateTime,Global_active_power, type="n", main = "", ylab="Global Active Power (kilowatts)", xlab = ""))
